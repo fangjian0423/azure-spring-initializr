@@ -1,6 +1,7 @@
 package com.azure.spring.initializr.generator;
 
 import com.azure.spring.initializr.generator.gitworkflow.BuildWorkflowProjectContributor;
+import com.azure.spring.initializr.generator.gitworkflow.DeployToAzureSpringAppsWorkFlowProjectContributor;
 import com.azure.spring.initializr.generator.gitworkflow.GithubWorkflow;
 import io.spring.initializr.generator.buildsystem.gradle.GradleBuildSystem;
 import io.spring.initializr.generator.buildsystem.maven.MavenBuildSystem;
@@ -79,6 +80,11 @@ public class GithubworkflowGenerationConfiguration {
     @Bean
     public BuildWorkflowProjectContributor buildWorkflowProjectContributor(GithubWorkflow buildWorkflow, ProjectDescription description) {
         return new BuildWorkflowProjectContributor(buildWorkflow, description);
+    }
+
+    @Bean
+    public DeployToAzureSpringAppsWorkFlowProjectContributor deployToAzureSpringAppsWorkFlowProjectContributor() {
+        return new DeployToAzureSpringAppsWorkFlowProjectContributor();
     }
 
 }
