@@ -113,3 +113,6 @@ scalastyle-output.xml
 # Flatten-pom
 .flattened-pom.xml
 flatter.pom
+
+# Property file used for localhost developing
+developer.yml

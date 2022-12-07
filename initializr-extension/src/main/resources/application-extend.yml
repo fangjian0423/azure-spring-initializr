@@ -39,3 +39,5 @@ spring:
           property-sources:
             - name: key-vault-property-souece
               endpoint: ${input-your-keyvault-endpoint}
+  config:
+    import: developer.yml

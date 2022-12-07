@@ -3,6 +3,7 @@ package com.azure.spring.initializr.generator;
 import com.azure.spring.initializr.generator.codespaces.CodespacesProjectContributor;
 import com.azure.spring.initializr.generator.dependabot.GradleDependabotProjectContributor;
 import com.azure.spring.initializr.generator.dependabot.MavenDependabotProjectContributor;
+import com.azure.spring.initializr.generator.readme.ReadmeProjectContributor;
 import io.spring.initializr.generator.buildsystem.gradle.GradleBuildSystem;
 import io.spring.initializr.generator.buildsystem.maven.MavenBuildSystem;
 import io.spring.initializr.generator.condition.ConditionalOnBuildSystem;
@@ -16,6 +17,11 @@ public class AzureGenerationConfiguration {
     @Bean
     public CodespacesProjectContributor codespacesProjectContributor() {
         return new CodespacesProjectContributor();
+    }
+
+    @Bean
+    public ReadmeProjectContributor readmeProjectContributor() {
+        return new ReadmeProjectContributor();
     }
 
     @Configuration
